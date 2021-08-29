@@ -9,8 +9,20 @@
     "minimum-stability": "dev",
     "require": {
         "laravel/framework": "^8.54",
-        "laravelevetools/eve-socialite-provider": "^1.0"
+        "laravelevetools/eve-socialite-provider": "^1.0",
+        "laravel/socialite": "5",
+        "xup/core": "@dev"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../core"
+        },
+        {
+            "type": "path",
+            "url": "../../packages/LaravelEveTools/eveapi"
+        }
+    ],
     "extra": {
         "laravel": {
             "providers": [

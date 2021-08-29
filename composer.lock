@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e374e9b858cf286e4087ec18592be4ee",
+    "content-hash": "84ff9bf85e8fa901bfba26ccd2a27486",
     "packages": [
         {
             "name": "brick/math",
@@ -438,6 +438,70 @@
             "time": "2020-12-29T14:50:06+00:00"
         },
         {
+            "name": "eveseat/eseye",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eveseat/eseye.git",
+                "reference": "b9d6753ccad9edce2bed6c91142f62eaebe24a8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eveseat/eseye/zipball/b9d6753ccad9edce2bed6c91142f62eaebe24a8c",
+                "reference": "b9d6753ccad9edce2bed6c91142f62eaebe24a8c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gmp": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-openssl": "*",
+                "guzzlehttp/guzzle": "^6.2|^7.0",
+                "monolog/monolog": "^2.0",
+                "nesbot/carbon": "^2.0",
+                "php": ">= 7.2",
+                "predis/predis": "^1.1",
+                "web-token/jwt-easy": "^2.1",
+                "web-token/jwt-signature-algorithm-ecdsa": "^2.1",
+                "web-token/jwt-signature-algorithm-hmac": "^2.1",
+                "web-token/jwt-signature-algorithm-rsa": "^2.1"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "m6web/redis-mock": "^5.0",
+                "mikey179/vfsstream": "~1",
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "bin": [
+                "bin/tokengenerator"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Seat\\Eseye\\": "src/"
+                },
+                "files": [
+                    "src/Helpers/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Leon Jacobs",
+                    "email": "leonja511@gmail.com"
+                }
+            ],
+            "description": "A Standalone PHP ESI (EVE Swagger Interface) Client Library",
+            "support": {
+                "issues": "https://github.com/eveseat/eseye/issues",
+                "source": "https://github.com/eveseat/eseye/tree/2.4.0"
+            },
+            "time": "2021-05-19T05:42:25+00:00"
+        },
+        {
             "name": "fgrosse/phpasn1",
             "version": "v2.3.0",
             "source": {
@@ -518,20 +582,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Result-Type.git",
-                "reference": "cce288e91826d6d33d76b57f1ad4bdc3f3a8c1d6"
+                "reference": "84afea85c6841deeea872f36249a206e878a5de0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/cce288e91826d6d33d76b57f1ad4bdc3f3a8c1d6",
-                "reference": "cce288e91826d6d33d76b57f1ad4bdc3f3a8c1d6",
+                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/84afea85c6841deeea872f36249a206e878a5de0",
+                "reference": "84afea85c6841deeea872f36249a206e878a5de0",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0 || ^8.0",
-                "phpoption/phpoption": "^1.7.3"
+                "phpoption/phpoption": "^1.8"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.8 || ^9.3.7"
+                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
             },
             "default-branch": true,
             "type": "library",
@@ -547,7 +611,7 @@
             "authors": [
                 {
                     "name": "Graham Campbell",
-                    "email": "graham@alt-three.com"
+                    "email": "hello@gjcampbell.co.uk"
                 }
             ],
             "description": "An Implementation Of The Result Type",
@@ -560,7 +624,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
-                "source": "https://github.com/GrahamCampbell/Result-Type/tree/1.0"
+                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.0.2"
             },
             "funding": [
                 {
@@ -572,7 +636,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-25T20:12:13+00:00"
+            "time": "2021-08-28T21:34:50+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -987,16 +1051,16 @@
         },
         {
             "name": "laravel/socialite",
-            "version": "5.x-dev",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "777b74ffc7a1f0dc4d60c12c2921395315980c1f"
+                "reference": "35d71b24fd25f797eb67d060c578b3c292314aa6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/777b74ffc7a1f0dc4d60c12c2921395315980c1f",
-                "reference": "777b74ffc7a1f0dc4d60c12c2921395315980c1f",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/35d71b24fd25f797eb67d060c578b3c292314aa6",
+                "reference": "35d71b24fd25f797eb67d060c578b3c292314aa6",
                 "shasum": ""
             },
             "require": {
@@ -1005,15 +1069,14 @@
                 "illuminate/http": "^6.0|^7.0|^8.0",
                 "illuminate/support": "^6.0|^7.0|^8.0",
                 "league/oauth1-client": "^1.0",
-                "php": "^7.2|^8.0"
+                "php": "^7.2"
             },
             "require-dev": {
                 "illuminate/contracts": "^6.0|^7.0",
                 "mockery/mockery": "^1.0",
                 "orchestra/testbench": "^4.0|^5.0|^6.0",
-                "phpunit/phpunit": "^8.0|^9.3"
+                "phpunit/phpunit": "^8.0"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1053,7 +1116,40 @@
                 "issues": "https://github.com/laravel/socialite/issues",
                 "source": "https://github.com/laravel/socialite"
             },
-            "time": "2021-08-26T13:36:13+00:00"
+            "time": "2020-09-08T15:11:41+00:00"
+        },
+        {
+            "name": "laravelevetools/eve-api",
+            "version": "dev-develop",
+            "dist": {
+                "type": "path",
+                "url": "../../packages/LaravelEveTools/eveapi",
+                "reference": "60317adfea9d0a0215095bf03223ca6dae0fc9e6"
+            },
+            "require": {
+                "eveseat/eseye": "^2.4",
+                "laravel/framework": "^8.40"
+            },
+            "require-dev": {
+                "laravel/tinker": "3.x-dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelEveTools\\EveApi\\EveApiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelEveTools\\EveApi\\": "src/"
+                }
+            },
+            "description": "Collections of abstract laravel jobs to interact with eves online ESI endpoints",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "laravelevetools/eve-socialite-provider",
@@ -1981,26 +2077,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "994ecccd8f3283ecf5ac33254543eb0ac946d525"
+                "reference": "7554fd1827d20613c2ffddf91d41a75f36b4f1af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/994ecccd8f3283ecf5ac33254543eb0ac946d525",
-                "reference": "994ecccd8f3283ecf5ac33254543eb0ac946d525",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/7554fd1827d20613c2ffddf91d41a75f36b4f1af",
+                "reference": "7554fd1827d20613c2ffddf91d41a75f36b4f1af",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5.9 || ^7.0 || ^8.0"
+                "php": "^7.0 || ^8.0"
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.4.1",
-                "phpunit/phpunit": "^4.8.35 || ^5.7.27 || ^6.5.6 || ^7.0 || ^8.0 || ^9.0"
+                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
             },
             "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.7-dev"
+                    "dev-master": "1.8-dev"
                 }
             },
             "autoload": {
@@ -2019,7 +2115,7 @@
                 },
                 {
                     "name": "Graham Campbell",
-                    "email": "graham@alt-three.com"
+                    "email": "hello@gjcampbell.co.uk"
                 }
             ],
             "description": "Option Type for PHP",
@@ -2031,7 +2127,7 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/php-option/issues",
-                "source": "https://github.com/schmittjoh/php-option/tree/1.7.5"
+                "source": "https://github.com/schmittjoh/php-option/tree/master"
             },
             "funding": [
                 {
@@ -2043,7 +2139,73 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-20T17:29:33+00:00"
+            "time": "2021-08-28T21:30:13+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/predis/predis.git",
+                "reference": "e616f856792dc75a59f3598bf82425338c2acae4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/predis/predis/zipball/e616f856792dc75a59f3598bf82425338c2acae4",
+                "reference": "e616f856792dc75a59f3598bf82425338c2acae4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net",
+                    "role": "Creator & Maintainer"
+                },
+                {
+                    "name": "Till Krüss",
+                    "homepage": "https://till.im",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/predis/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "support": {
+                "issues": "https://github.com/predis/predis/issues",
+                "source": "https://github.com/predis/predis/tree/v1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tillkruss",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-08-24T17:25:19+00:00"
         },
         {
             "name": "psr/container",
@@ -3080,12 +3242,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/error-handler.git",
-                "reference": "f831511643e11d9bf170df109532ea2c633f4bf3"
+                "reference": "2d97e9b865e6eb24d89ae6f88d54e1058e4fa69b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/error-handler/zipball/f831511643e11d9bf170df109532ea2c633f4bf3",
-                "reference": "f831511643e11d9bf170df109532ea2c633f4bf3",
+                "url": "https://api.github.com/repos/symfony/error-handler/zipball/2d97e9b865e6eb24d89ae6f88d54e1058e4fa69b",
+                "reference": "2d97e9b865e6eb24d89ae6f88d54e1058e4fa69b",
                 "shasum": ""
             },
             "require": {
@@ -3140,7 +3302,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-25T13:37:01+00:00"
+            "time": "2021-08-28T15:07:30+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -5975,12 +6137,37 @@
                 "source": "https://github.com/webmozarts/assert/tree/master"
             },
             "time": "2021-06-19T13:45:26+00:00"
+        },
+        {
+            "name": "xup/core",
+            "version": "dev-develop",
+            "dist": {
+                "type": "path",
+                "url": "../core",
+                "reference": "02ff25bbfe120bf4c44f028616ac6796f2337524"
+            },
+            "require": {
+                "laravel/framework": "^8.54",
+                "laravelevetools/eve-api": "@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Xup\\Core\\": "src/"
+                }
+            },
+            "description": "Core files for xup project",
+            "transport-options": {
+                "relative": true
+            }
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "xup/core": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -20,7 +20,7 @@
     <body >
         <div class="h-full">
 
-            @include('web::includes.navbar')
+            @include('web::includes.navbar-guest')
 
             @yield('content')
 

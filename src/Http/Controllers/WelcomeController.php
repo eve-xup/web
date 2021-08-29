@@ -4,12 +4,13 @@ namespace Xup\Web\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class WelcomeController extends Controller
 {
 
     public function index(){
 
-        return view('home');
+        return view('web::welcome');
 
     }
+
 }

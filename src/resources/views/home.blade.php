@@ -1,23 +1,9 @@
-@extends('web::layouts.guest')
+@extends('web::layouts.app')
 
 @section('content')
 
-    <div class="w-100 flex justify-center">
+    <div class="w-100">
 
-        <div class="card lg:card-side border mt-5">
-            <figure>
-                <img src="{{ asset('web/images/hound.png') }}" class="object-scale-down h-48">
-            </figure>
-            <div class="card-body">
-                <div class="card-title">{{config('APP_NAME')}}</div>
-                <p>Join your fleet here!</p>
-                <div class="card-actions">
-                    <a href="">
-                        <img src="{{ asset('web/images/eve-sso.png') }}" />
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 
 @endsection
