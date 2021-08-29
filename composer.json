@@ -1,0 +1,22 @@
+{
+    "name": "xup/web",
+    "description": "Webfiles for xup project",
+    "autoload": {
+        "psr-4": {
+            "Xup\\Web\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "laravel/framework": "^8.54",
+        "laravelevetools/eve-socialite-provider": "^1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Xup\\Web\\WebServiceProvider",
+                "Xup\\Web\\LivewireServiceProvider"
+            ]
+        }
+    }
+}
