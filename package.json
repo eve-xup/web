@@ -1,0 +1,19 @@
+{
+  "name": "xup-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.3.3",
+    "laravel-mix": "^6.0.28",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.8",
+    "daisyui": "^1.14.0"
+  },
+
+}
