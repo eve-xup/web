@@ -9,6 +9,7 @@ Route::group([
 
     Route::get('/', 'WelcomeController@index');
 
+    Route::get('/home', 'HomeController@index')->name('home');
 
 });
 
@@ -23,3 +24,4 @@ Route::group([
     Route::get('/auth/callback', 'PublicSsoController@callback');
 
 });
+

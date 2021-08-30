@@ -22,6 +22,7 @@ class PublicSsoController extends Controller
 
 
     public function callback(Socialite $social){
+
         $eve_data = $social->driver('eveonline')
             ->scopes($this->scopes)
             ->user();
@@ -36,20 +37,20 @@ class PublicSsoController extends Controller
         if(!auth()->check())
             auth()->login($user);
 
-        return redirect()->intended();
+        return redirect()->intended('/home');
     }
 
 
     private function findOrCreateUser(SocialiteUser $eve_user){
 
-        RefreshToken::where('character_id', $eve_user)
+        RefreshToken::where('character_id', $eve_user->id)
             ->where('character_owner_hash', '<>', $eve_user->character_owner_hash)
             ->whereNull('deleted_at')
             ->delete();
 
         $user = User::whereHas('refresh_tokens', function($query) use($eve_user){
             $query->where('character_id', $eve_user->id)
-                ->where('character_ownser_hash', '=', $eve_user->character_owner_hash)
+                ->where('character_owner_hash', '=', $eve_user->character_owner_hash)
                 ->whereNull('deleted_at');
         })->first();
 
@@ -71,11 +72,9 @@ class PublicSsoController extends Controller
 
         $user = User::firstOrCreate([
             'main_character_id' => $eve_user->id,
-        ], [
-            'name' => $eve_user->name,
-            'active' => true,
         ]);
-
+        $user->save();
+        return $user;
     }
 
     private function updateRefreshToken(SocialiteUser $eve_user, User $xup_user){

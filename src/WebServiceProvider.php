@@ -2,7 +2,9 @@
 
 namespace Xup\Web;
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Xup\Web\Http\Composers\Users;
 
 class WebServiceProvider extends ServiceProvider
 {
@@ -14,6 +16,8 @@ class WebServiceProvider extends ServiceProvider
         $this->add_views();
 
         $this->add_publications();
+
+        $this->add_view_composers();
 
     }
 
@@ -35,5 +39,11 @@ class WebServiceProvider extends ServiceProvider
             __DIR__ . '/resources/css' => public_path('web/css'),
             __DIR__ . '/resources/images/' => public_path('web/images')
         ], ['config', 'xup']);
+    }
+
+    private function add_view_composers(){
+
+        View::composer('web::includes.navbar', Users::class);
+
     }
 }
