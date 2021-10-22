@@ -8,6 +8,7 @@
     },
     "minimum-stability": "stable",
     "require": {
+        "php": "^7.4|^8.0",
         "laravel/framework": "^8.54",
         "laravelevetools/eve-socialite-provider": "^1.0",
         "laravel/socialite": "^5.2",

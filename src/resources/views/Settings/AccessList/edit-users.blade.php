@@ -1,7 +1,5 @@
 @extends('web::layouts.grids.4-8')
 
-
-
 @section('left')
     <div class="rounded-md w-full shadow-md bg-gray-800">
         <div class="border-b px-4 py-2 border-b-2 text-white">
@@ -9,7 +7,7 @@
         </div>
         <div class="p-4">
 
-            @include('web::Settings.AccessList.partials.role-form', ['action' => route('settings.acl.edit', ['role'=>$role]), 'method'=>'PUT'])
+            @include('web::Settings.AccessList.partials.role-form', ['action' => route('settings.acl.users', ['role'=>$role]), 'method'=>'PUT'])
 
         </div>
 
@@ -26,5 +24,13 @@
 
 
 @section('right')
-    @include('web::Settings.AccessList.partials.permission-list')
+    <div class="rounded-md w-full shadow-md bg-gray-800">
+        <div class="border-b px-4 py-2 border-b-2 text-white">
+            Manage Users
+        </div>
+        <div class="p-4">
+            @livewire('xup-web::settings.role.users', ['role'=>$role])
+        </div>
+    </div>
+
 @endsection

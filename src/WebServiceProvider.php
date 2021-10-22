@@ -2,16 +2,14 @@
 
 namespace Xup\Web;
 
-use Illuminate\Http\RedirectResponse;
+
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\View;
-use LaravelEveTools\EveApi\Jobs\Corporations\RolesHistory;
 use Livewire\Livewire;
 use Xup\Core\AbstractPluginProvider;
 use Xup\Web\Acl\Policies\GlobalPolicy;
 use Xup\Web\Http\Components\Livewire\Datatables\Access\RolesDatatable;
-use Xup\Web\Http\Composers\Navigation;
-use Xup\Web\Http\Composers\Users;
+
 
 class WebServiceProvider extends AbstractPluginProvider
 {
@@ -64,10 +62,14 @@ class WebServiceProvider extends AbstractPluginProvider
 
     private function add_view_composers(){
 
-        View::composer('web::includes.sidebar.sidebar', Users::class);
+        View::composer('web::includes.sidebar.sidebar', \Xup\Web\Http\Composers\Users::class);
         app('view')->composer([
             'web::includes.sidebar.sidebar',
-        ], Navigation::class);
+        ], \Xup\Web\Http\Composers\Navigation::class);
+
+        app('view')->composer([
+            'web::Settings.AccessList.partials.permission-list'
+        ], \Xup\Web\Http\Composers\Permissions::class);
 
     }
 

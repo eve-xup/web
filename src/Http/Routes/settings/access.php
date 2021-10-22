@@ -19,8 +19,15 @@ Route::group([
     Route::get('/roles/{role}/edit', 'AclController@edit')
         ->name('settings.acl.edit');
 
-    Route::put('/roles/{role}/edit', 'AclController@update');
+    Route::get('/roles/{role}/users', 'AclController@users')
+        ->name('settings.acl.users');
 
+    Route::put('/roles/{role}/users', 'AclController@update_users');
 
+    Route::put('/roles/{role}/edit', 'AclController@update_permissions');
+
+    Route::delete('/role/{role}', 'AclController@delete')
+        ->middleware('can:acl.delete')
+        ->name('settings.acl.delete');
 
 });

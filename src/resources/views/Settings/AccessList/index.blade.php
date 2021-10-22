@@ -10,7 +10,7 @@
         </div>
         <div class="p-4">
 
-            @include('web::Settings.AccessList.paritals.role-form')
+            @include('web::Settings.AccessList.partials.role-form')
 
         </div>
 
