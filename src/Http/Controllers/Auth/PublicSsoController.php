@@ -12,7 +12,11 @@ use Xup\Core\Models\User;
 class PublicSsoController extends Controller
 {
 
-    protected $scopes = ['publicData'];
+    protected $scopes = [
+        'publicData',
+        'esi-fleets.read_fleet.v1',
+        'esi-fleets.write_fleet.v1'
+    ];
 
     public function redirect(Socialite $social){
         return $social->driver('eveonline')
@@ -82,9 +86,10 @@ class PublicSsoController extends Controller
             ->where('character_owner_hash', '<>', $eve_user->character_owner_hash)
             ->delete();
 
+
         RefreshToken::withTrashed()->firstOrNew([
             'character_id'          => $eve_user->id
-        ], [
+        ])->fill([
             'user_id'               => $xup_user->getKey(),
             'refresh_token'         => $eve_user->refreshToken,
             'scopes'                => $eve_user->scopes,

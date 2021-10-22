@@ -1,16 +1,9 @@
-<div class="navbar shadow-lg bg-neutral text-neutral-content">
+<div class="relative bg-gray-900 bg-opacity-50 text-white h-16 shadow px-4 md:px-6 z-10 flex items-center sticky top-0 border-b-2">
+    <button x-data @click="$store.sidebar.toggle()" class="mr-2">
+        {{ svg('heroicon-o-menu', 'h-6 w-6') }}
+    </button>
 
-    <div class="flex-1 px-2 mx-2 justify-between">
-        <span class="text-lg font-bold">
-            XUP | @yield('heading', 'Blops fleet helper tool')
-        </span>
-    </div>
-
-    <div class="flex-none">
-        <div class="avatar">
-            <div class="rounded-full w-10 h-10 m-1">
-                <img src="{{ $user->main_character->getAvatarUrl(64) }}" />
-            </div>
-        </div>
-    </div>
+    @hasSection('page_title')
+        @yield('page_title')
+    @endif
 </div>

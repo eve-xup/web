@@ -1,24 +1,14 @@
 module.exports = {
-  purge: {
-    options: {
-      safelist: [
-          /data-theme$/,
-      ]
+    purge: [
+        './src/resources/views/**/*.php',
+        './vendor/**/*.php'
+    ],
+    darkMode: true, // or 'media' or 'class'
+    theme: {
+        extend: {},
     },
-    content: [
-      //'./resources/**/*.blade.php',
-      //'./resources/**/*.js',
-    ]
-
-  },
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [
-      require('daisyui')
-  ],
+    variants: {
+        extend: {},
+    },
+    plugins: [],
 }

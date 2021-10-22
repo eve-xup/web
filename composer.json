@@ -6,12 +6,18 @@
             "Xup\\Web\\": "src/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "laravel/framework": "^8.54",
         "laravelevetools/eve-socialite-provider": "^1.0",
-        "laravel/socialite": "5",
-        "xup/core": "@dev"
+        "laravel/socialite": "^5.2",
+        "xup/core": "^1.0",
+        "rappasoft/laravel-livewire-tables": "^1.0",
+        "josegus/laravel-flash": "^1.0",
+        "rawilk/laravel-form-components": "^6.0",
+        "blade-ui-kit/blade-heroicons": "dev-main",
+        "livewire/livewire": "^2.6",
+        "livewire-ui/modal": "^1.0"
     },
     "repositories": [
         {
@@ -21,6 +27,10 @@
         {
             "type": "path",
             "url": "../../packages/LaravelEveTools/eveapi"
+        },
+        {
+            "type": "path",
+            "url": "../../packages/SimplyUnnamed/LaravelExtensibleApplication"
         }
     ],
     "extra": {

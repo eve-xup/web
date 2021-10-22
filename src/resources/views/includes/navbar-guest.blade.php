@@ -1,11 +1,3 @@
-<div class="navbar shadow-lg bg-neutral text-neutral-content">
-
-    <div class="flex-1 px-2 mx-2 justify-center">
-        <span class="text-lg font-bold">
-            XUP | @yield('heading', 'Blops fleet helper tool')
-        </span>
-    </div>
-
-
-
+<div class="relative bg-gray-900 bg-opacity-50 text-white justify-center font-bold text-center h-16 shadow px-4 md:px-6 z-10 flex items-center sticky top-0 border-b-2">
+    {{ config('app.name') }} - XUP Fleet Service
 </div>

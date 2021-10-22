@@ -1,6 +1,6 @@
-@extends('web::layouts.guest')
+@extends('web::layouts.app')
 
-@section('content')
+@section('page')
 
     <div class="w-100 flex justify-center">
 
