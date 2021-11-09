@@ -9,6 +9,9 @@ use Livewire\Livewire;
 use Xup\Core\AbstractPluginProvider;
 use Xup\Web\Acl\Policies\GlobalPolicy;
 use Xup\Web\Http\Components\Livewire\Datatables\Access\RolesDatatable;
+use Xup\Web\Http\Components\Livewire\Fleet\CreateFleet;
+use Xup\Web\Http\Components\Livewire\Fleet\ManageFleet;
+use Xup\Web\Http\Composers\RoleNavigation;
 
 
 class WebServiceProvider extends AbstractPluginProvider
@@ -30,10 +33,11 @@ class WebServiceProvider extends AbstractPluginProvider
     }
 
     public function register(){
-        //$this->registerNavGroups(__DIR__.'/Config/navigation.groups.php');
         $this->registerNavigation(__DIR__.'/Config/navigation.navbar.php');
         $this->registerPermissions(__DIR__ .'/Config/permissions/acl.permissions.php', 'acl');
         $this->registerPermissions(__DIR__ .'/Config/permissions/fleet-commander.permissions.php', 'xup');
+
+        $this->mergeConfigFrom(__DIR__.'/Config/acl.navigation.php', 'xup.navigation.acl');
 
         $this->register_authorization();
     }
@@ -41,6 +45,8 @@ class WebServiceProvider extends AbstractPluginProvider
     public function add_livewire_components(){
 
         Livewire::component('livewire-web::acl.roles-table', RolesDatatable::class);
+        Livewire::component('livewire-web::fleet.create', CreateFleet::class);
+        Livewire::component('livewire-web::fleet.manage', ManageFleet::class);
     }
 
 
@@ -63,13 +69,18 @@ class WebServiceProvider extends AbstractPluginProvider
     private function add_view_composers(){
 
         View::composer('web::includes.sidebar.sidebar', \Xup\Web\Http\Composers\Users::class);
+
         app('view')->composer([
             'web::includes.sidebar.sidebar',
         ], \Xup\Web\Http\Composers\Navigation::class);
 
         app('view')->composer([
-            'web::Settings.AccessList.partials.permission-list'
+            'web::Settings.roles.partials.permission-list'
         ], \Xup\Web\Http\Composers\Permissions::class);
+
+        app('view')->composer([
+            'web::Settings.roles.navigation'
+        ], \Xup\Web\Http\Composers\RoleNavigation::class);
 
     }
 

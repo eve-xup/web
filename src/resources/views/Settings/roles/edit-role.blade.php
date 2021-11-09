@@ -1,7 +1,8 @@
-
 @extends('web::layouts.grids.4-8')
 
-@section('page_title', 'Roles & Permissions')
+@section('before_page')
+    @include('web::Settings.roles.navigation')
+@stop
 
 @section('left')
     <div class="rounded-md w-full shadow-md bg-gray-800">
@@ -10,14 +11,14 @@
         </div>
         <div class="p-4">
 
-            @include('web::Settings.AccessList.partials.role-form')
+            @include('web::Settings.roles.partials.role-form', ['action' => route('settings.acl.edit', ['role'=>$role]), 'method'=>'PUT'])
 
         </div>
 
         <div class="p-4 flex justify-end">
 
             <button form="role-form" class="px-4 py-2 bg-cyan-800 text-white rounded shadow-lg hover:bg-cyan-700 active:bg-cyan-900">
-                Create Role
+                Update Role
             </button>
 
         </div>
@@ -25,8 +26,7 @@
     </div>
 @stop
 
+
 @section('right')
-
-    @livewire('livewire-web::acl.roles-table')
-
+    @include('web::Settings.roles.partials.permission-list')
 @endsection

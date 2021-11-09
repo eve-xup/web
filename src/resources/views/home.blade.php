@@ -4,7 +4,7 @@
 
     <div class="w-100">
 
-        <a href="{{ route('fleets.create') }}" class="btn btn-primary">Create a Fleet</a>
+        <a href="{{ route('xup.fleets.create') }}" class="btn btn-primary">Create a Fleet</a>
 
     </div>
 

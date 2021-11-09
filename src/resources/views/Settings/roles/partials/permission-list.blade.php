@@ -31,7 +31,7 @@
                 <div x-show="category === '{{$scope}}'">
                     <ul>
                         @foreach($permissions as $ability => $permission)
-                            @include('web::Settings.AccessList.partials.permission-checkbox', [
+                            @include('web::Settings.roles.partials.permission-checkbox', [
                                 'scope'=>$scope,
                                 'ability'=> is_array($permission) ? $ability:$permission,
                                 'is_granted'=>$role_permissions->contains(sprintf('%s.%s', $scope, $ability)),

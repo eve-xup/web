@@ -1,7 +1,10 @@
-<div class="flex flex-col">
+<div class="flex flex-col h-full">
     <div class="h-16 border-b-2 flex flex-row justify-center items-center px-4 text-center">
         <div class="w-full text-white text-center font-bold text-lg tracking-wider ">
             {{config('app.name')}}
+        </div>
+        <div class="absolute lg:hidden text-white right-0 cursor-pointer" @click="$store.sidebar.toggle()" class="mr-2">
+            @svg('heroicon-o-x', 'w-4 h-4')
         </div>
     </div>
 
@@ -29,6 +32,15 @@
 
 @endforeach
 
-
+<div class="px-2 mt-auto">
+    <ul class="mt-1 list-none">
+        <li class="relative text-gray-200 hover:bg-gray-700 hover:text-white cursor-pointer rounded-lg my-0.5">
+            <a href="{{route('auth.logout')}}" class="flex justify-start items-center px-2 py-2 rounded-lg">
+                @svg('heroicon-o-logout', 'w-4 h-4')
+                <span class="px-2">Logout</span>
+            </a>
+        </li>
+    </ul>
+</div>
 
 </div>

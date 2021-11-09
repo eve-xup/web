@@ -13,10 +13,7 @@
         @foreach($user->characters as $character)
             @if($user->main_character->getKey() != $character->getKey())
                 <a href="{{ route('user.set.main', ['character'=>$character]) }}" class="rounded-full m-1 has-tooltip">
-                        <span class="tooltip rounded p-1 px-2 shadow-lg bg-black text-white -mt-7 text-center ">
-                            {{ $character->name }}
-                        </span>
-                    <img class="rounded-full" src="{{ $character->getAvatarUrl(32) }}" alt="{{$character->name}}">
+                    @include('web::partials.character.portrait-tooltip', ['character'=>$character])
                 </a>
             @endif
         @endforeach

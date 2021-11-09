@@ -39,9 +39,35 @@ class RoleUsers extends Component
         return view('web::components.livewire.settings.role-users');
     }
 
+    public function add($key)
+    {
+        $user = $this->user_list->firstWhere('id', '=', $key);
+        $this->selected_users->add($user);
+    }
+
+    public function remove($key)
+    {
+        $this->selected_users = $this->selected_users->whereNotIn('id', [$key]);
+    }
+
     public function getAvailableUsersProperty()
     {
         return $this->user_list
+            ->diff($this->selected_users)
+        ->filter(function (User $user) {
+            if ($this->user_search === '') {
+                return true;
+            }
+            return $user->characters->filter(function (Character $character) {
+                    return Str::contains($character->name, [$this->user_search]);
+                })->count() > 0;
+        });
+
+    }
+
+    public function getSelectedUsersFilteredProperty()
+    {
+        return $this->selected_users
             ->filter(function (User $user) {
                 if ($this->user_search === '') {
                     return true;
@@ -49,18 +75,8 @@ class RoleUsers extends Component
                 return $user->characters->filter(function (Character $character) {
                         return Str::contains($character->name, [$this->user_search]);
                     })->count() > 0;
-                /*return trim($this->selected_users) == '' ??
-                    $user->characters->filter(function (Character $character) {
-                        return Str::contains($character->name, [$this->user_search]);
-                    })->count() > 0;*/
             });
-        /*->diff($this->selected_users)
-        ->filter(function(User $user){
-           return $user->characters->filter(function(Character $character){
-                return Str::contains($character->name, [$this->user_search]);
-           })->count() > 0;
-        });*/
-    }
 
+    }
 
 }

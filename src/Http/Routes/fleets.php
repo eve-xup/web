@@ -1,12 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Xup\Web\Http\Controllers\Fleets\FleetController;
 
 Route::group([
-    'middleware'=>['web', 'auth'],
-    'prefix' => 'fleets'
+    'prefix' => 'fleets',
+    'namespace' => '\\Xup\\Web\\Http\\Controllers\Fleets',
 ], function(){
 
-    Route::get('create', [\Xup\Web\Http\Controllers\Fleets\FleetController::class, 'index'])->name('fleets.create');
+    Route::get('create', [FleetController::class, 'index'])
+        ->middleware(['can:xup.fleet-commander'])
+        ->name('xup.fleets.create');
+
+
+    Route::get('current', [FleetController::class, 'manage'])
+        ->middleware(['can:xup.fleet-commander'])
+        ->name('xup.fleets.current');
 
 });

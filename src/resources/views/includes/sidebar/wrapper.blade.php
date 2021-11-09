@@ -8,7 +8,7 @@
      x-transition:leave-end="opacity-0 transform -translate-x-64"
      class="w-64 h-full z-50 x-50 absolute lg:relative xl:relative 2xl:relative h-screen">
 
-    <div class="h-full bg-gray-900 bg-opacity-50">
+    <div class="h-full bg-gray-900 lg:bg-opacity-50">
         <div class="h-full w-64 flex flex-col">
             @include('web::includes.sidebar.sidebar')
             @if(env('APP_ENV') != 'production')

@@ -17,8 +17,8 @@
 
 
             <span class="px-2">
-        {{$main['label']}}
-    </span>
+                {{$main['label']}}
+            </span>
             @if(isset($main['entries']))
                 <span class="transition-transform transform ml-auto" :class="open ? 'rotate-90' : ''">@svg('heroicon-o-chevron-right', 'w-4 h-4')</span>
             @endif

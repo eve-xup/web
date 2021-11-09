@@ -13,7 +13,6 @@
 
     <!-- Tailwind css -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
     @livewireStyles
 
     @stack('styles')
@@ -96,7 +95,12 @@
                     </h1>
                 @endif
                 @include('web::includes.notifications')
+
+                @yield('before_page')
+
                 @yield('page')
+
+                @yield('after_page')
             </div>
 
         </div>
@@ -105,6 +109,7 @@
 
 @livewireScripts
 @livewire('livewire-ui-modal')
+<script type="text/javascript" src="{{asset('js/pusher.js')}}" defer></script>
 @stack('alpinejs')
 @stack('scripts')
 

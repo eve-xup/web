@@ -10,6 +10,13 @@ return [
         'route' => 'home',
         'match' => 'home',
     ],
+    '1currentFleet' => [
+        'name'=>'current_fleet',
+        'icon' => 'heroicon-o-home',
+        'label' => 'Current Fleet',
+        'route' => 'xup.fleets.current',
+        'permissions' => 'xup.current-fleet',
+    ],
     'administration' => [
         'name' => 'access-management',
         'group' => 'Administration',
@@ -32,5 +39,13 @@ return [
             ]*/
         ]
     ],
+    'fleets' => [
+        'name'  => 'fleet-management',
+        'group' => 'X-UP',
+        'icon'  =>  'heroicon-o-cube-transparent',
+        'label' => 'Form Fleet',
+        'permissions' => 'xup.fleet-commander',
+        'route' => 'xup.fleets.create'
+    ]
 
 ];

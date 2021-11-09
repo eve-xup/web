@@ -7,7 +7,9 @@ Route::group([
     'middleware' => 'web',
 ], function(){
 
-    Route::get('/', 'WelcomeController@index');
+    Route::get('/', function(){
+        return redirect(route('home'));
+    });
 
     Route::get('/login', 'HomeController@login')->name('login');
 
