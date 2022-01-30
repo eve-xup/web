@@ -1,4 +1,4 @@
-@extends('web::layouts.grids.3-6-3')
+@extends('xup::layouts.grids.3-6-3')
 
 @section('middle')
 

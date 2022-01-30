@@ -3,14 +3,13 @@
         class="pr-2" x-cloak>
 
     <li class="relative text-gray-200 hover:bg-gray-700 hover:text-white cursor-pointer rounded-lg my-0.5">
-        <a @if(isset($main['route']))
-           href="{{route($main['route'])}}"
+        <a @if(!is_null(\Arr::get($main, 'url', null))) href="{{ $main['url'] }}"
            @elseif(isset($main['entries']))
            @click="toggle"
            @endif class="flex justify-start items-center px-2 py-2 rounded-lg">
 
             @if(isset($main['icon']))
-                @svg($main['icon'], 'w-4 h-4')
+                @svg($main['icon'], 'w-4 h-4 '.\Arr::get($main, 'iconClass', ''))
             @else
                 <div class="w-4 h-4"></div>
             @endif
@@ -35,31 +34,18 @@
             x-transition:leave-end="opacity-0 transform origin-top scale-y-0"
         >
             @foreach($main['entries'] as $entry)
-                @if(array_key_exists('permissions', $entry))
-                    @canany($entry['permissions'])
-                        <li class="relative  cursor-pointer pl-4 rounded-lg my-0.5 text-gray-200 hover:bg-gray-700 ">
-                            <a href="{{ route($entry['route']) }}" class="flex justify-start items-center rounded-lg  hover:text-white px-2 py-2 ">
-                                @if(isset($entry['icon']))
-                                    @svg($entry['icon'], 'w-4 h-4')
-                                @else
-                                    <div class="w-4 h-4"></div>
-                                @endif
-                                <span class="px-2">{{$entry['label']}}</span>
-                            </a>
-                        </li>
-                    @endif
-                @else
+
                     <li class="relative  cursor-pointer pl-4 px-2 py-2 rounded-lg my-0.5 text-gray-200 hover:bg-gray-700 ">
-                        <a href="{{ route($entry['route']) }}" class="flex justify-start items-center hover:text-white">
+                        <a @if(!is_null(\Arr::get($entry, 'url', null))) href="{{ $entry['url'] }}" @endif  class="flex justify-start items-center hover:text-white">
                             @if(isset($entry['icon']))
-                                @svg($entry['icon'], 'w-4 h-4')
+                                @svg($entry['icon'], 'w-4 h-4 '.\Arr::get($entry, 'iconClass', ''))
                             @else
                                 <div class="w-4 h-4"></div>
                             @endif
                             <span class="px-2">{{$entry['label']}}</span>
                         </a>
                     </li>
-                @endif
+
             @endforeach
         </ul>
 

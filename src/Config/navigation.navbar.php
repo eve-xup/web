@@ -10,13 +10,29 @@ return [
         'route' => 'home',
         'match' => 'home',
     ],
-    '1currentFleet' => [
+
+    '1fleetManagement' => [
+        'name'=>'fleet_manager',
+        'icon' => 'heroicon-o-adjustments',
+        'label' => 'Fleet Management',
+        'route' => 'xup.fleets.current',
+        'parameters' => [
+            'fleet' => \Xup\Web\Actions\Cache\UserCurrentFleet::class,
+        ],
+        'permissions' => 'xup.fleet-manager',
+    ],
+    '2currentFleet' => [
         'name'=>'current_fleet',
-        'icon' => 'heroicon-o-home',
+        'icon' => 'heroicon-o-paper-airplane',
+        'iconClass'=> 'rotate-45',
         'label' => 'Current Fleet',
         'route' => 'xup.fleets.current',
-        'permissions' => 'xup.current-fleet',
+        'parameters' => [
+            'fleet' => \Xup\Web\Actions\Cache\UserCurrentFleet::class,
+        ],
+        'permissions' => 'xup.in-fleet',
     ],
+
     'administration' => [
         'name' => 'access-management',
         'group' => 'Administration',

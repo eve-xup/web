@@ -36,7 +36,7 @@ class RoleUsers extends Component
 
     public function render()
     {
-        return view('web::components.livewire.settings.role-users');
+        return view('xup::livewire.settings.role-users');
     }
 
     public function add($key)

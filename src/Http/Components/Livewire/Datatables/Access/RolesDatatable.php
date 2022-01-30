@@ -29,7 +29,7 @@ class RolesDatatable extends DataTableComponent
 
             Column::make('Actions')
             ->format(function($value, $column, $row){
-                return view('web::partials.tables.access.role_actions', ['role'=>$row]);
+                return view('xup::partials.tables.access.role_actions', ['role'=>$row]);
             })
         ];
         // TODO: Implement columns() method.

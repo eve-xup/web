@@ -1,5 +1,7 @@
-@extends('web::layouts.grids.12')
+@extends('xup::layouts.grids.4-4-4')
 
-@section('full')
-    @livewire('livewire-web::fleet.manage', ['fleet'=>$fleet])
+@section('left')
+    @livewire('livewire-xup::fleet.settings', ['fleet'=>$fleet])
+
+    @livewire('livewire-xup::fleet.member-summary', ['fleet'=>$fleet])
 @stop

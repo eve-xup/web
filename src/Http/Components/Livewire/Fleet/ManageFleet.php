@@ -10,6 +10,6 @@ class ManageFleet extends Component
     public $fleet;
 
     public function render(){
-        return view('web::components.livewire.fleet.manage-fleet');
+        return view('xup::livewire.fleet.manage-fleet');
     }
 }

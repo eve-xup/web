@@ -1,8 +1,8 @@
 <div>
-    <x-form-group label="Character Search" name="filter" :border="false" class="text-white font-light">
-        <x-input name="character_search" placeholder="Filter Characters"
-                 wire:model.debounce.500ms="character_search"></x-input>
-    </x-form-group>
+    <x-xup-form-group label="Character Search" name="filter" :border="false" labelClass="text-white">
+        <x-xup-input name="character_search" placeholder="Filter Characters"
+                 wire:model.debounce.500ms="character_search"></x-xup-input>
+    </x-xup-form-group>
 
     <h2 class="text-white pb-2">Choose your fleet boss</h2>
 
@@ -51,14 +51,14 @@
                         @CSRF
                         <input type="hidden" value="{{$selected_character->character_id}}">
 
-                        <x-form-group label="Fleet Title" name="title" class="w-full text-gray-200">
-                            <x-input name="title"
+                        <x-xup-form-group label="Fleet Title" name="title" class="w-full text-gray-200">
+                            <x-xup-input name="title"
                                      placeholder="Fleet Title"
                                      autocomplete="off"
-                                     wire:model="title"></x-input>
-                        </x-form-group>
+                                     wire:model.debounce.500ms="title"></x-xup-input>
+                        </x-xup-form-group>
 
-                        <button type="submit" class="ml-auto rounded bg-cyan-800 text-white shadow hover:bg-cyan-700 active:bg-cyan-900 px-4 py-2">
+                        <button type="submit" wire:loading.attr="disabled" class="ml-auto rounded bg-cyan-800 text-white shadow hover:bg-cyan-700 active:bg-cyan-900 px-4 py-2">
                             Create Fleet
                         </button>
                     </form>

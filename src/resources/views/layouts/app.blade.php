@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @include('web::includes.favico')
+    @include('xup::includes.favico')
 
     <title>XUP | @yield('title', 'Blops Fleet Tool')</title>
 
@@ -79,13 +79,14 @@
 <body class="overflow-hidden">
 
 <div id="application">
-    <div class="h-screen flex {{ $bg_color ?? 'bg-gray-800'}} overflow-hidden bg-opacity-50">
+    <div class="h-screen flex {{ $bg_color ?? 'bg-gray-800'}} overflow-hidden bg-opacity-50 bg-no-repeat bg-fixed bg-cover"
+        style="background-image: url('{{asset('web/images/82725.jpg')}}'); ">
 
-        @includeWhen(auth()->check(), 'web::includes.sidebar.wrapper')
+        @includeWhen(auth()->check(), 'xup::includes.sidebar.wrapper')
         <div class="w-full transition-all h-screen overflow-auto">
 
-            @includeWhen(auth()->check(), 'web::includes.navbar')
-            @includeWhen(!auth()->check(), 'web::includes.navbar-guest')
+            @includeWhen(auth()->check(), 'xup::includes.navbar')
+            @includeWhen(!auth()->check(), 'xup::includes.navbar-guest')
 
             <div class="p-4">
                 @hasSection('page_heading')
@@ -94,7 +95,7 @@
                         <small class="font-light">@yield('page_description')</small>
                     </h1>
                 @endif
-                @include('web::includes.notifications')
+                @include('xup::includes.notifications')
 
                 @yield('before_page')
 

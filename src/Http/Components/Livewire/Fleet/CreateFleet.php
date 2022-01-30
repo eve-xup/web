@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Livewire\Component;
+use Xup\Core\Chains\UpdateFleet;
 use Xup\Core\Jobs\Character\Fleet as FindFleet;
+use Xup\Core\Jobs\Fleet\GetFleetMembers;
 use Xup\Core\Models\Character\Character;
 use Xup\Core\Models\Fleets\Fleet;
 use Xup\Core\Models\Fleets\FleetInvitation;
@@ -47,9 +49,13 @@ class CreateFleet extends Component
     public function CreateFleet(){
         $validatedData = $this->validate();
 
-        $fleet = Fleet::create(array_merge($validatedData, [
-            'boss_id'=>$this->selected_character->getKey()
-        ]));
+        $fleet = Fleet::withTrashed()->firstOrNew([
+            'fleet_id' => $this->fleet_id,
+            'boss_id' => $this->selected_character->getKey()
+        ]);
+        $fleet->fill($validatedData);
+        $fleet->save();
+        $fleet->restore();
 
         FleetInvitation::create([
             'fleet_id'=>$fleet->fleet_id,
@@ -57,7 +63,7 @@ class CreateFleet extends Component
         ]);
 
         if($fleet)
-            return redirect(route('xup.fleets.current'));
+            return redirect(route('xup.fleets.current', ['fleet'=>$fleet]));
     }
 
 
@@ -104,7 +110,7 @@ class CreateFleet extends Component
 
 
     public function render(){
-        return view('web::components.livewire.fleet.create-fleet');
+        return view('xup::livewire.fleet.create-fleet');
     }
 
 }

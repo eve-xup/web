@@ -8,9 +8,9 @@
      x-transition:leave-end="opacity-0 transform -translate-x-64"
      class="w-64 h-full z-50 x-50 absolute lg:relative xl:relative 2xl:relative h-screen">
 
-    <div class="h-full bg-gray-900 lg:bg-opacity-50">
+    <div class="h-full bg-gray-900">
         <div class="h-full w-64 flex flex-col">
-            @include('web::includes.sidebar.sidebar')
+            @include('xup::includes.sidebar.sidebar')
             @if(env('APP_ENV') != 'production')
                 <div class="mt-auto text-center text-sm text-white">
                     This page took {{ round((microtime(true) - LARAVEL_START), 2) }} seconds to render
@@ -19,7 +19,7 @@
         </div>
 
     </div>
-    @include('web::includes.sidebar.sidebar')
+    @include('xup::includes.sidebar.sidebar')
 
 </div>
 

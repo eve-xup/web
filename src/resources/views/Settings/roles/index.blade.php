@@ -1,5 +1,5 @@
 
-@extends('web::layouts.grids.4-8')
+@extends('xup::layouts.grids.4-8')
 
 @section('page_title', 'Roles & Permissions')
 
@@ -10,7 +10,7 @@
         </div>
         <div class="p-4">
 
-            @include('web::Settings.roles.partials.role-form')
+            @include('xup::Settings.roles.partials.role-form')
 
         </div>
 

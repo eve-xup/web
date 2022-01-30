@@ -1,4 +1,4 @@
-@extends("web::layouts.app")
+@extends("xup::layouts.app")
 
 @section('page')
 

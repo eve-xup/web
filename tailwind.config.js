@@ -1,5 +1,5 @@
 module.exports = {
-    purge: [
+    content: [
         './src/resources/views/**/*.php',
         './vendor/**/*.php'
     ],

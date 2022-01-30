@@ -1,7 +1,7 @@
-@extends('web::layouts.grids.4-8')
+@extends('xup::layouts.grids.4-8')
 
 @section('before_page')
-    @include('web::Settings.roles.navigation')
+    @include('xup::Settings.roles.navigation')
 @stop
 
 @section('left')
@@ -11,7 +11,7 @@
         </div>
         <div class="p-4">
 
-            @include('web::Settings.roles.partials.role-form', ['action' => route('settings.acl.users', ['role'=>$role]), 'method'=>'PUT'])
+            @include('xup::Settings.roles.partials.role-form', ['action' => route('settings.acl.users', ['role'=>$role]), 'method'=>'PUT'])
 
         </div>
 

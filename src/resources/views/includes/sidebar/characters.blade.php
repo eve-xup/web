@@ -12,8 +12,8 @@
     <div class="relative flex inline-flex flex-wrap justify-items-start">
         @foreach($user->characters as $character)
             @if($user->main_character->getKey() != $character->getKey())
-                <a href="{{ route('user.set.main', ['character'=>$character]) }}" class="rounded-full m-1 has-tooltip">
-                    @include('web::partials.character.portrait-tooltip', ['character'=>$character])
+                <a href="{{ route('user.set.main', ['character'=>$character]) }}" class="rounded-full m-1 has-tooltip relative">
+                    @include('xup::partials.character.portrait-tooltip', ['character'=>$character])
                 </a>
             @endif
         @endforeach

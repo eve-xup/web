@@ -6,12 +6,13 @@
     <div class="w-full p-4 flex">
         <div class="w-full lg:w-5/12">
             @foreach($permission_scopes as $scope => $permissions)
-                <div class="class py-1 cursor-pointer px-2 my-1 min-h-12 flex flex-wrap rounded justify-between items-center"
-                     :class="{
+                <div
+                    class="class py-1 cursor-pointer px-2 my-1 min-h-12 flex flex-wrap rounded justify-between items-center"
+                    :class="{
                             'bg-sky-500 shadow text-white hover:text-white': category === '{{$scope}}',
                             'hover:text-sky-500 text-white': category !== '{{$scope}}'
                             }"
-                     @click="setCategory('{{$scope}}')">
+                    @click="setCategory('{{$scope}}')">
                     <span>
                         {{ ucfirst($scope) }} (<span x-text="getPermissionCount('{{$scope}}')">0</span>/{{count($permissions)}} )
                     </span>
@@ -31,13 +32,15 @@
                 <div x-show="category === '{{$scope}}'">
                     <ul>
                         @foreach($permissions as $ability => $permission)
-                            @include('web::Settings.roles.partials.permission-checkbox', [
-                                'scope'=>$scope,
-                                'ability'=> is_array($permission) ? $ability:$permission,
-                                'is_granted'=>$role_permissions->contains(sprintf('%s.%s', $scope, $ability)),
-                                'label'=>  \Illuminate\Support\Arr::get($permission, 'label', ''),
-                                'description' =>  \Illuminate\Support\Arr::get($permission, 'description', ''),
-])
+                            @if(Arr::get($permission, 'assignable', true) == true)
+                                @include('xup::Settings.roles.partials.permission-checkbox', [
+                                    'scope'=>$scope,
+                                    'ability'=> is_array($permission) ? $ability:$permission,
+                                    'is_granted'=>$role_permissions->contains(sprintf('%s.%s', $scope, $ability)),
+                                    'label'=>  \Illuminate\Support\Arr::get($permission, 'label', ''),
+                                    'description' =>  \Illuminate\Support\Arr::get($permission, 'description', ''),
+                                ])
+                            @endif
                         @endforeach
                     </ul>
                 </div>

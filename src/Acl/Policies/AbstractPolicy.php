@@ -26,7 +26,7 @@ abstract class AbstractPolicy
     protected function permissionsFrom(User $user){
         $cache = sprintf('users.%d:acl', $user->getKey());
 
-        return Cache::store('redis')->remember($cache, self::CACHE_TTL, function() use ($user){
+        return Cache::remember($cache, self::CACHE_TTL, function() use ($user){
             return $user->roles()->with('permissions')->get()->pluck('permissions')->flatten();
         });
     }
@@ -35,6 +35,6 @@ abstract class AbstractPolicy
     {
         $cache = sprintf('users:%d:acl:permissions:%s', $user->getKey(), $permission);
 
-        return Cache::store('redis')->remember($cache, self::CACHE_TTL, $callback) !== false;
+        return Cache::remember($cache, self::CACHE_TTL, $callback) !== false;
     }
 }

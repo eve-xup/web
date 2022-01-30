@@ -9,7 +9,7 @@ class WelcomeController extends Controller
 
     public function index(){
 
-        return view('web::welcome');
+        return view('xup::welcome');
 
     }
 

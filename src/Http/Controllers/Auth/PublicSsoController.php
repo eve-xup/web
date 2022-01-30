@@ -117,8 +117,8 @@ class PublicSsoController extends Controller
             'name'          => $eve_user->name,
         ]);
 
-        //This will fetch the corporation and alliance of the character as well.
-        \Xup\Core\Jobs\Character\Character::dispatch($eve_user->id);
+
+        \Xup\Core\Jobs\Character\Character::dispatch($eve_user->id, true);
     }
 
 

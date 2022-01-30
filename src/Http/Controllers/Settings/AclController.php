@@ -16,7 +16,7 @@ class AclController extends Controller
      */
     public function index()
     {
-        return view('web::Settings.roles.index');
+        return view('xup::Settings.roles.index');
     }
 
     public function store(StoreRoleRequest $request)
@@ -32,7 +32,7 @@ class AclController extends Controller
     {
         $role_permissions = $role->permissions->pluck('title');
 
-        return view('web::Settings.roles.edit-role', compact('role', 'role_permissions'));
+        return view('xup::Settings.roles.edit-role', compact('role', 'role_permissions'));
     }
 
     private function manage_permissions(Role $role, $new_permissions)
@@ -69,6 +69,7 @@ class AclController extends Controller
 
     public function update_permissions(Role $role, UpdateRoleRequest $request)
     {
+
         $role->update($request->get('role'));
 
 
@@ -79,7 +80,7 @@ class AclController extends Controller
     }
 
     public function users(Role $role){
-        return view('web::Settings.roles.edit-users', compact('role'));
+        return view('xup::Settings.roles.edit-users', compact('role'));
     }
 
     public function update_users(Role $role, UpdateRoleRequest $request)

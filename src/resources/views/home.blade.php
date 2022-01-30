@@ -1,11 +1,5 @@
-@extends('web::layouts.app')
+@extends('xup::layouts.grids.4-8')
 
-@section('content')
-
-    <div class="w-100">
-
-        <a href="{{ route('xup.fleets.create') }}" class="btn btn-primary">Create a Fleet</a>
-
-    </div>
-
+@section('left')
+    @include("xup::fleets.fleet-list");
 @endsection

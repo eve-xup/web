@@ -15,7 +15,6 @@
         "xup/core": "^1.0",
         "rappasoft/laravel-livewire-tables": "^1.0",
         "josegus/laravel-flash": "^1.0",
-        "rawilk/laravel-form-components": "^6.0",
         "blade-ui-kit/blade-heroicons": "dev-main",
         "livewire/livewire": "^2.6",
         "livewire-ui/modal": "^1.0"
@@ -27,11 +26,7 @@
         },
         {
             "type": "path",
-            "url": "../../packages/LaravelEveTools/eveapi"
-        },
-        {
-            "type": "path",
-            "url": "../../packages/SimplyUnnamed/LaravelExtensibleApplication"
+            "url": "../../laravelevetools/eveapi"
         }
     ],
     "extra": {

@@ -1,9 +1,9 @@
-@extends("web::layouts.app")
+@extends("xup::layouts.app")
 
 @section('page')
 
 
-    <div class="flex w-full {{ $spacing ?? 'lg:space-x-4' }} flex-col lg:flex-row">
+    <div class="flex flex-col lg:flex-row w-full {{ $spacing ?? 'lg:space-x-4' }}">
 
         <div class="w-full lg:w-4/12">
             @yield('left')

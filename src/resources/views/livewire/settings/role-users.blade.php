@@ -1,5 +1,5 @@
 <div class="space-y-1">
-    <x-input wire:model.debounce.500ms="user_search" placeholder="Search Characters"></x-input>
+    <x-xup-input wire:model.debounce.500ms="user_search" placeholder="Search Characters"></x-xup-input>
 
     <div class="lg:space-x-0.5 space-y-1 flex flex-col lg:flex-row">
 
@@ -18,7 +18,7 @@
                             <div class="h-6 flex inline-flex">
                                 @foreach($user->characters as $character)
                                     <span class="has-tooltip">
-                                    @include('web::partials.character.portrait-tooltip', ['character'=>$character])
+                                    @include('xup::partials.character.portrait-tooltip', ['character'=>$character])
                                 </span>
                                 @endforeach
                             </div>
@@ -54,7 +54,7 @@
                             <div class="h-6 flex inline-flex">
                                 @foreach($user->characters as $character)
                                     <span class="has-tooltip">
-                                    @include('web::partials.character.portrait-tooltip', ['character'=>$character])
+                                    @include('xup::partials.character.portrait-tooltip', ['character'=>$character])
                                     </span>
                                 @endforeach
                             </div>
